@@ -6,6 +6,7 @@ import { ViewProjectModule } from './shared/components/view-project/view-project
 import { HomeComponent } from './pages/home/home.component';
 import { CreateProjectFormComponent } from './shared/components/create-project-form/create-project-form.component';
 import { ViewProjectComponent } from './shared/components/view-project/view-project.component';
+import { HelpComponent } from './pages/help/help.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
         component: ViewProjectComponent
       }
     ]
+  }, 
+  {
+    path: 'help',
+    component: HelpComponent
   }
 ];
 

@@ -11,6 +11,8 @@ import { HomeModule } from './pages/home/home.module';
 import { CreateProjectFormComponent } from './shared/components/create-project-form/create-project-form.component';
 import { ViewProjectComponent } from './shared/components/view-project/view-project.component';
 import { RouterModule } from '@angular/router';
+import { HelpComponent } from './pages/help/help.component';
+import { HelpModule } from './pages/help/help.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     NgbModule,
     HeaderModule,
-    HomeModule
+    HomeModule,
+    HelpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -32,6 +32,8 @@ export class ViewProjectComponent {
     },
   ];
 
+  page = 1;
+
   convertDate(date: string): string {
     const myDate = new Date(date);
     const datePipe = new DatePipe('en-US');
