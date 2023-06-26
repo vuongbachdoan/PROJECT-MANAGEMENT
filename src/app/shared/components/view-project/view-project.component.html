@@ -1,0 +1,99 @@
+<div class="p-3">
+  <div class="row gap-3">
+    <div class="col">
+      <div class="mb-3 row">
+        <input
+          type="email"
+          class="form-control col"
+          id="search"
+          placeholder="Project number, name, customer name"
+        />
+        <div class="col">
+          <div class="dropdown w-100">
+            <div ngbDropdown class="d-inline-block w-100">
+              <button
+                type="button"
+                class="btn border-light-subtle w-100 d-flex justify-content-center align-items-center"
+                id="status"
+                ngbDropdownToggle
+              >
+                Project status
+                <span style="flex: 1"></span>
+              </button>
+              <div ngbDropdownMenu aria-labelledby="status">
+                <button ngbDropdownItem>New</button>
+                <button ngbDropdownItem>Status - 1</button>
+                <button ngbDropdownItem>Status - 2</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row gap-3">
+        <button class="col btn btn-primary fw-medium">Search project</button>
+        <button class="col btn btn-light text-primary fw-medium">
+          Reset search
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <table class="table border">
+    <thead>
+      <tr>
+        <th scope="col" class="border"></th>
+        <th scope="col" class="border">Numnber</th>
+        <th scope="col" class="border">Name</th>
+        <th scope="col" class="border">Status</th>
+        <th scope="col" class="border">Customer</th>
+        <th scope="col" class="border">Start date</th>
+        <th scope="col" class="border"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of tableData; let last = last">
+        <th
+          class="border-start border-end text-center"
+          [ngClass]="{'border border-top-0 border-bottom-0': !last}"
+          scope="row"
+        >
+          <input type="checkbox" name="checkbox" id="" />
+        </th>
+        <td class="border-start border-end" [ngClass]="{'border border-top-0 border-bottom-0': !last}">
+          {{ project.number }}
+        </td>
+        <td class="border-start border-end" [ngClass]="{'border border-top-0 border-bottom-0': !last}">
+          {{ project.name }}
+        </td>
+        <td class="border-start border-end" [ngClass]="{'border border-top-0 border-bottom-0': !last}">
+          {{ project.status }}
+        </td>
+        <td class="border-start border-end" [ngClass]="{'border border-top-0 border-bottom-0': !last}">
+          {{ project.customer }}
+        </td>
+        <td class="border-start border-end" [ngClass]="{'border border-top-0 border-bottom-0': !last}">
+          {{ project.startDate }}
+        </td>
+        <td
+          class="border-start border-end text-center"
+          [ngClass]="{'border border-top-0 border-bottom-0': !last}"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-trash3"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"
+            />
+          </svg>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,197 @@
+<div class="p-3">
+  <ngb-alert
+    #selfClosingAlert
+    *ngIf="successMessage"
+    type="danger"
+    (closed)="successMessage = ''"
+    >{{ successMessage }}
+  </ngb-alert>
+
+  <div class="card border-0">
+    <div class="card-header bg-transparent border-0"><h5>New project</h5></div>
+    <div class="card-body">
+      <form class="row">
+        <div class="mb-3 col-4">
+          <!-- Project number -->
+          <label for="projectNumber" class="form-label"
+            >Project number <span class="text-danger">*</span></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="projectNumber"
+            aria-describedby="projectNumberHelper"
+            required
+          />
+          <div
+            *ngIf="projectNumberError != ''"
+            id="projectNumberHelper"
+            class="form-text"
+          >
+            Project number error helper.
+          </div>
+        </div>
+
+        <!-- Project name -->
+        <div class="mb-3">
+          <label for="projectName" class="form-label"
+            >Project name<span class="text-danger">*</span></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="projectName"
+            aria-describedby="projectNameHelper"
+            required
+          />
+          <div
+            *ngIf="projectNameError != ''"
+            id="projectNameHelper"
+            class="form-text"
+          >
+            project name error helper.
+          </div>
+        </div>
+
+        <!-- Customer -->
+        <div class="mb-3">
+          <label for="customer" class="form-label"
+            >Customer<span class="text-danger">*</span></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="customer"
+            aria-describedby="customerHelper"
+            required
+          />
+          <div
+            *ngIf="customerError != ''"
+            id="customerHelper"
+            class="form-text"
+          >
+            Customer error helper.
+          </div>
+        </div>
+
+        <!-- Group -->
+        <div class="mb-3 col-4">
+          <label for="group" class="form-label"
+            >Group<span class="text-danger">*</span></label
+          >
+          <div class="dropdown w-100">
+            <div ngbDropdown class="d-inline-block w-100">
+              <button
+                type="button"
+                class="btn border-light-subtle w-100 d-flex justify-content-center align-items-center"
+                id="group"
+                ngbDropdownToggle
+              >
+                New
+                <span style="flex: 1"></span>
+              </button>
+              <div ngbDropdownMenu aria-labelledby="group">
+                <button ngbDropdownItem>New</button>
+                <button ngbDropdownItem>Group - 1</button>
+                <button ngbDropdownItem>Group - 2</button>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="groupError != ''" id="groupHelper" class="form-text">
+            Group error helper.
+          </div>
+        </div>
+
+        <!-- Member -->
+        <div class="mb-3">
+          <label for="members" class="form-label">Members</label>
+          <input
+            type="text"
+            class="form-control"
+            id="members"
+            aria-describedby="membersHelper"
+          />
+          <div *ngIf="membersError != ''" id="membersHelper" class="form-text">
+            Members error helper.
+          </div>
+        </div>
+
+        <!-- Status -->
+        <div class="mb-3 col-4">
+          <label for="status" class="form-label"
+            >Status<span class="text-danger">*</span></label
+          >
+          <div class="dropdown w-100">
+            <div ngbDropdown class="d-inline-block w-100">
+              <button
+                type="button"
+                class="btn border-light-subtle w-100 d-flex justify-content-center align-items-center"
+                id="status"
+                ngbDropdownToggle
+              >
+                New
+                <span style="flex: 1"></span>
+              </button>
+              <div ngbDropdownMenu aria-labelledby="status">
+                <button ngbDropdownItem>New</button>
+                <button ngbDropdownItem>Status - 1</button>
+                <button ngbDropdownItem>Status - 2</button>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="statusError != ''" id="statusHelper" class="form-text">
+            Status error helper.
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Start date -->
+          <div class="mb-3 col">
+            <label for="startDate" class="form-label"
+              >Start date<span class="text-danger">*</span></label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="startDate"
+              aria-describedby="startDateHelper"
+              required
+            />
+            <div
+              *ngIf="startDateError != ''"
+              id="startDateHelper"
+              class="form-text"
+            >
+              Start date error helper.
+            </div>
+          </div>
+          <div class="mb-3 col">
+            <label for="endDate" class="form-label"
+              >End date<span class="text-danger">*</span></label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="endDate"
+              aria-describedby="endDateError"
+              required
+            />
+            <div *ngIf="endDateError != ''" id="endDateError" class="form-text">
+              End date error helper.
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center gap-3">
+          <button class="fs-medium btn btn-light col-3">Cancel</button>
+          <button
+            class="fs-medium btn btn-primary col-3"
+            (click)="changeSuccessMessage($event)"
+          >
+            Create Project
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
